@@ -4,8 +4,9 @@ CREATE TABLE `Usuarios` (
   `password` VARCHAR(255) NOT NULL,
   `ultima_conexion` DATETIME,
   `fecha_creacion` DATETIME NOT NULL,
-  `google_id` VARCHAR(255) UNIQUE,
-  `id_comuna` INT
+  `id_comuna` INT,
+  `imagen_perfil` VARCHAR(255),
+  `estado_cuenta` ENUM('activo', 'inactivo') NOT NULL DEFAULT 'activo'
 );
 
 CREATE TABLE `Roles` (
