@@ -10,7 +10,7 @@ exports.registrarUsuario = [
         if (!errors.isEmpty()) {
             return res.status(400).json({ errors: errors.array() });
         }
-        const { correo, password, id_comuna, imagen_perfil } = req.body;
+        const { correo, nombre_completo, password, id_comuna, imagen_perfil } = req.body;
         const fecha_creacion = new Date();
         const estado_cuenta = 'activo';
         try {
@@ -19,7 +19,7 @@ exports.registrarUsuario = [
                 return res.status(400).json({ message: 'El correo ya está registrado' });
             }
             const hashPassword = await bcrypt.hash(password, 10);
-            const nuevoUsuario = new Usuario(null, correo, hashPassword, null, fecha_creacion, id_comuna, imagen_perfil || null, estado_cuenta);
+            const nuevoUsuario = new Usuario(null, correo,nombre_completo ,hashPassword, null, fecha_creacion, id_comuna, imagen_perfil || null, estado_cuenta);
             await nuevoUsuario.registrar();
             return res.status(201).json({ message: 'Usuario registrado exitosamente' });
         } catch (error) {
