@@ -1,0 +1,20 @@
+.header-register {
+    --ion-toolbar-background: #b191c2;
+}
+
+.contenido-body {
+    --background: url('/assets/img-fondos/paisaje-pixel.jpg') no-repeat center center / cover;
+
+}
+
+#contenedor-formulario {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+#contenedor-formulario .card-form{
+    margin-top: 5%;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding-left: 10%;
+    padding-right: 10%;
+}
