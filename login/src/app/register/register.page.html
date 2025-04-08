@@ -10,14 +10,23 @@
       <h1 id="titulo-formulario">Registro Usuario</h1>
       <div class="fornulario">
         <form action="">
-          <!-- correo electronico -->
+          <!-- correo electronico  -->
           <label for="email"><b>Correo Electronico</b></label> <br>
-          <input type="email" name="email" id="email"> <br>
+          <input type="email" name="email" id="email"> <br>  
+          <!-- contraseña -->
           <label for="password"><b>Contraseña</b></label><br>
           <input type="password" name="password" id="paswword"> <br>
+          <!-- confirmar contraseña -->
           <label for="password"><b>Confirmar contraseña</b></label> <br>
           <input type="password" name="c_password" id="c_paswword"> <br>
-          
+          <!-- nombre completo -->
+          <label for="nombre_completo"><b>Nombre completo</b></label> <br>
+          <input type="text" minlength="20" name="nombre_completo" id="nombre_completo"><br>
+          <!-- imagen de perfil -->
+           <label for="img_perfil"><b>Imagen de perfil</b></label><br>
+           <input type="file" id="imagen_perfil" name="imagen_perfil" (change)="onFileSelect($event)" accept="image/*"><br>
+           <!-- mostrar imagen -->
+           <img [src]="imagen_base_64" *ngIf="imagen_base_64" alt="pre_imagen_perfil" width="150">
         </form>
       </div>
     </div>
